@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-labelledby="title desc">
+  <title id="title">Drink placeholder</title>
+  <desc id="desc">A simple bottle and glass illustration</desc>
+  <rect width="600" height="400" fill="#edf4f7"/>
+  <rect x="225" y="95" width="95" height="220" rx="28" fill="#1f6f78"/>
+  <rect x="247" y="58" width="51" height="55" rx="10" fill="#1f6f78"/>
+  <rect x="355" y="165" width="105" height="150" rx="16" fill="#ffffff" stroke="#1f6f78" stroke-width="10"/>
+  <path d="M365 235h85v70h-85z" fill="#f2a950"/>
+  <circle cx="272" cy="205" r="31" fill="#f2a950"/>
+</svg>
