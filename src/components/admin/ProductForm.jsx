@@ -111,3 +111,21 @@ function ProductForm({ onSave }) {
           onChange={handleChange}
         />
       </label>
+      <label htmlFor={`${formId}-description`}>
+        Description
+        <textarea
+          id={`${formId}-description`}
+          name="description"
+          value={formData.description}
+          onChange={handleChange}
+        />
+      </label>
+
+      <button type="submit">Add product</button>
+      {message && <p>{message}</p>}
+    </form>
+  );
+}
+
+export default ProductForm;
+
