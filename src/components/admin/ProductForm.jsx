@@ -12,6 +12,7 @@ const emptyProduct = {
 };
 
 function ProductForm({ onSave }) {
+  // One object stores all controlled form values.
   const [formData, setFormData] = useState(emptyProduct);
   const [message, setMessage] = useState("");
   const formId = useId();
@@ -27,6 +28,17 @@ function ProductForm({ onSave }) {
   }
   // Validate and save the new product
   async function handleSubmit(event) {
+  // Use the input name to update the matching property.
+  function handleChange(event) {
+    const { name, value } = event.target;
+
+    setFormData((currentData) => ({
+      ...currentData,
+      [name]: value,
+    }));
+
+  }
+   function handleSubmit(event) {
     event.preventDefault();
 
     if (!formData.name || !formData.category || !formData.price) {
@@ -34,6 +46,7 @@ function ProductForm({ onSave }) {
       return;
     }
 
+    // Number inputs still give us strings, so convert them before saving.
     const productToSave = {
       ...formData,
       price: Number(formData.price),
@@ -47,6 +60,14 @@ function ProductForm({ onSave }) {
     } catch (error) {
       setMessage("Could not add product.");
     }
+    onSave(productToSave)
+      .then(() => {
+        setMessage("Product added successfully.");
+        setFormData(emptyProduct);
+      })
+      .catch(() => {
+        setMessage("Could not add product.");
+      });
   }
 
   return (
@@ -72,6 +93,7 @@ function ProductForm({ onSave }) {
           onChange={handleChange}
         />
       </label>
+
       <label htmlFor={`${formId}-category`}>
         Category
         <select
@@ -87,6 +109,7 @@ function ProductForm({ onSave }) {
           <option value="Juice">Juice</option>
         </select>
       </label>
+
       <label htmlFor={`${formId}-price`}>
         Price
         <input
@@ -132,6 +155,7 @@ function ProductForm({ onSave }) {
       </label>
       <button type="submit">Add product</button>
 
+      <button type="submit">Add product</button>
       {message && <p>{message}</p>}
     </form>
   );
