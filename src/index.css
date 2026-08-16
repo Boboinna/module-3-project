@@ -84,3 +84,89 @@ main {
   max-width: 1120px;
 }
 
+.page {
+  padding: 2rem 1.25rem;
+}
+
+.hero {
+  align-items: center;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1.1fr 0.9fr;
+  min-height: 460px;
+  padding: 3rem 1.25rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 6vw, 4.5rem);
+  line-height: 1.05;
+  margin: 0.5rem 0 1rem;
+}
+
+.hero p {
+  line-height: 1.7;
+  max-width: 620px;
+}
+
+.hero img {
+  border-radius: 1rem;
+  width: 100%;
+}
+
+.eyebrow,
+.category-label {
+  color: #1f6f78;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero .button-link {
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.categories-section {
+  padding: 1rem 1.25rem 4rem;
+}
+
+.category-grid,
+.product-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.category-grid article,
+.product-card,
+.cart-item,
+.admin-product,
+.product-form {
+  background: white;
+  border: 1px solid #d8dee7;
+  border-radius: 0.75rem;
+  padding: 1rem;
+}
+
+.shop-controls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-group,
+.product-form label,
+.admin-product label {
+  display: grid;
+  gap: 0.4rem;
+}
+
+input,
+select,
+textarea {
+  border: 1px solid #b8c1ce;
+  border-radius: 0.4rem;
+  padding: 0.65rem;
+}
+
