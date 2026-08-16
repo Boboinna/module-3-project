@@ -21,24 +21,14 @@ function ProductForm({ onSave }) {
   function handleChange(event) {
     const { name, value } = event.target;
 
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  }
-  // Validate and save the new product
-  async function handleSubmit(event) {
-  // Use the input name to update the matching property.
-  function handleChange(event) {
-    const { name, value } = event.target;
-
     setFormData((currentData) => ({
       ...currentData,
       [name]: value,
     }));
-
   }
-   function handleSubmit(event) {
+
+  // Validate and save the new product
+  async function handleSubmit(event) {
     event.preventDefault();
 
     if (!formData.name || !formData.category || !formData.price) {
@@ -60,14 +50,6 @@ function ProductForm({ onSave }) {
     } catch (error) {
       setMessage("Could not add product.");
     }
-    onSave(productToSave)
-      .then(() => {
-        setMessage("Product added successfully.");
-        setFormData(emptyProduct);
-      })
-      .catch(() => {
-        setMessage("Could not add product.");
-      });
   }
 
   return (
@@ -153,8 +135,6 @@ function ProductForm({ onSave }) {
           onChange={handleChange}
         />
       </label>
-      <button type="submit">Add product</button>
-
       <button type="submit">Add product</button>
       {message && <p>{message}</p>}
     </form>
