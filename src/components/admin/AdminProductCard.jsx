@@ -22,3 +22,14 @@ function AdminProductCard({ product }) {
           onChange={(event) => setPrice(event.target.value)}
         />
       </label>
+      <button type="button" onClick={handlePriceUpdate}>
+        Save price
+      </button>
+      <button type="button" onClick={() => deleteProduct(product.id)}>
+        Delete
+      </button>
+    </article>
+  );
+}
+
+export default AdminProductCard;
