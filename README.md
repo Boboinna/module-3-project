@@ -75,7 +75,6 @@ Each product in the catalog contains:
   "category": "Soda",
   "description": "Refreshing carbonated soft drink.",
   "price": 100,
-  "stock": 20,
   "image": "/drink-placeholder.svg"
 }
 ```

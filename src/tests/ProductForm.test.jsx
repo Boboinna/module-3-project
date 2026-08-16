@@ -20,9 +20,7 @@ describe("ProductForm", () => {
       target: { value: "150" },
     });
 
-    fireEvent.change(screen.getByLabelText("Stock"), {
-      target: { value: "10" },
-    });
+    // stock field removed — no change required
 
     fireEvent.click(
       screen.getByRole("button", {
@@ -36,7 +34,6 @@ describe("ProductForm", () => {
           name: "Fanta",
           category: "Soda",
           price: 150,
-          stock: 10,
         }),
       );
     });

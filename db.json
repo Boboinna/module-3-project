@@ -7,7 +7,6 @@
       "category": "Soda",
       "description": "Refreshing carbonated soft drink.",
       "price": 100,
-      "stock": 20,
       "image": "/drink-placeholder.svg"
     },
     {
@@ -17,7 +16,6 @@
       "category": "Beer",
       "description": "A popular Kenyan lager.",
       "price": 250,
-      "stock": 15,
       "image": "/drink-placeholder.svg"
     },
     {
@@ -27,98 +25,16 @@
       "category": "Juice",
       "description": "Sweet mango fruit juice.",
       "price": 180,
-      "stock": 12,
       "image": "/drink-placeholder.svg"
     },
     {
-      "name": "Name",
-      "brand": "Afya",
+      "name": "Fanta Passion",
+      "brand": "Fanta",
       "category": "Juice",
-      "description": "Blag",
-      "price": 100,
-      "stock": 1000,
+      "description": "",
+      "price": 400,
       "image": "/drink-placeholder.svg",
       "id": 4
-    },
-    {
-      "name": "Name",
-      "brand": "Afya",
-      "category": "Juice",
-      "description": "Blag",
-      "price": 100,
-      "stock": 1000,
-      "image": "/drink-placeholder.svg",
-      "id": 5
-    },
-    {
-      "name": "Name",
-      "brand": "Afya",
-      "category": "Juice",
-      "description": "Blag",
-      "price": 100,
-      "stock": 1000,
-      "image": "/drink-placeholder.svg",
-      "id": 6
-    },
-    {
-      "name": "Name",
-      "brand": "Afya",
-      "category": "Juice",
-      "description": "Blag",
-      "price": 100,
-      "stock": 1000,
-      "image": "/drink-placeholder.svg",
-      "id": 7
-    },
-    {
-      "name": "Name",
-      "brand": "Afya",
-      "category": "Juice",
-      "description": "Blag",
-      "price": 100,
-      "stock": 1000,
-      "image": "/drink-placeholder.svg",
-      "id": 8
-    },
-    {
-      "name": "Name",
-      "brand": "Afya",
-      "category": "Juice",
-      "description": "Blag",
-      "price": 100,
-      "stock": 1000,
-      "image": "/drink-placeholder.svg",
-      "id": 9
-    },
-    {
-      "name": "Name",
-      "brand": "Afya",
-      "category": "Juice",
-      "description": "Blag",
-      "price": 100,
-      "stock": 1000,
-      "image": "/drink-placeholder.svg",
-      "id": 10
-    },
-    {
-      "name": "Name",
-      "brand": "Afya",
-      "category": "Juice",
-      "description": "Blag",
-      "price": 100,
-      "stock": 1000,
-      "image": "/drink-placeholder.svg",
-      "id": 11
-    },
-    {
-      "name": "Name",
-      "brand": "Afya",
-      "category": "Juice",
-      "description": "Blag",
-      "price": 100,
-      "stock": 1000,
-      "image": "/drink-placeholder.svg",
-      "id": 12
     }
   ]
 }

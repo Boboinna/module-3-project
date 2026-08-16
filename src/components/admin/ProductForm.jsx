@@ -7,7 +7,6 @@ const emptyProduct = {
   category: "",
   description: "",
   price: "",
-  stock: "",
   image: "/drink-placeholder.svg",
 };
 
@@ -40,7 +39,6 @@ function ProductForm({ onSave }) {
     const productToSave = {
       ...formData,
       price: Number(formData.price),
-      stock: Number(formData.stock),
     };
 
     try {
@@ -103,18 +101,7 @@ function ProductForm({ onSave }) {
           onChange={handleChange}
         />
       </label>
-
-      <label htmlFor={`${formId}-stock`}>
-        Stock
-        <input
-          id={`${formId}-stock`}
-          name="stock"
-          type="number"
-          min="0"
-          value={formData.stock}
-          onChange={handleChange}
-        />
-      </label>
+      
       <label htmlFor={`${formId}-description`}>
         Description
         <textarea

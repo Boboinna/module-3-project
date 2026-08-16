@@ -51,6 +51,10 @@ export function ProductProvider({ children }) {
           createdProduct,
         ]);
 
+        try {
+          window.alert(`${createdProduct.name} added.`);
+        } catch (e) {}
+
         return createdProduct;
       });
   }
@@ -77,6 +81,16 @@ export function ProductProvider({ children }) {
           ),
         );
 
+        try {
+          if (changes && Object.prototype.hasOwnProperty.call(changes, "price")) {
+            window.alert(
+              `${updatedProduct.name} price updated to Ksh ${updatedProduct.price}.`,
+            );
+          } else {
+            window.alert(`${updatedProduct.name} updated.`);
+          }
+        } catch (e) {}
+
         return updatedProduct;
       });
   }
@@ -88,6 +102,12 @@ export function ProductProvider({ children }) {
       if (!response.ok) {
         throw new Error("Could not delete product");
       }
+
+      // find product name for notification
+      try {
+        const product = products.find((p) => p.id === productId);
+        if (product) window.alert(`${product.name} deleted.`);
+      } catch (e) {}
 
       setProducts((currentProducts) =>
         currentProducts.filter((product) => product.id !== productId),
