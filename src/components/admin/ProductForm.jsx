@@ -11,7 +11,7 @@ const emptyProduct = {
   image: "/drink-placeholder.svg",
 };
 
-function ProductForm() {
+function ProductForm({ onSave }) {
   const [formData, setFormData] = useState(emptyProduct);
   const [message, setMessage] = useState("");
   const formId = useId();
@@ -25,9 +25,32 @@ function ProductForm() {
       [name]: value,
     });
   }
+  // Validate and save the new product
+  async function handleSubmit(event) {
+    event.preventDefault();
+
+    if (!formData.name || !formData.category || !formData.price) {
+      setMessage("Name, category and price are required.");
+      return;
+    }
+
+    const productToSave = {
+      ...formData,
+      price: Number(formData.price),
+      stock: Number(formData.stock),
+    };
+
+    try {
+      await onSave(productToSave);
+      setMessage("Product added successfully.");
+      setFormData(emptyProduct);
+    } catch (error) {
+      setMessage("Could not add product.");
+    }
+  }
 
   return (
-    <form className="product-form">
+    <form className="product-form" onSubmit={handleSubmit}>
       <label htmlFor={`${formId}-name`}>
         Product name
         <input
@@ -107,6 +130,9 @@ function ProductForm() {
           onChange={handleChange}
         />
       </label>
+      <button type="submit">Add product</button>
+
+      {message && <p>{message}</p>}
     </form>
   );
 }
