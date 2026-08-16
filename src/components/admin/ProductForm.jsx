@@ -1,5 +1,6 @@
 import { useId, useState } from "react";
 
+// Starting values for the product form
 const emptyProduct = {
   name: "",
   brand: "",
@@ -16,6 +17,17 @@ function ProductForm({ onSave }) {
   const [message, setMessage] = useState("");
   const formId = useId();
 
+  // Update the matching value when the administrator types
+  function handleChange(event) {
+    const { name, value } = event.target;
+
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  }
+  // Validate and save the new product
+  async function handleSubmit(event) {
   // Use the input name to update the matching property.
   function handleChange(event) {
     const { name, value } = event.target;
@@ -41,6 +53,13 @@ function ProductForm({ onSave }) {
       stock: Number(formData.stock),
     };
 
+    try {
+      await onSave(productToSave);
+      setMessage("Product added successfully.");
+      setFormData(emptyProduct);
+    } catch (error) {
+      setMessage("Could not add product.");
+    }
     onSave(productToSave)
       .then(() => {
         setMessage("Product added successfully.");
@@ -58,6 +77,7 @@ function ProductForm({ onSave }) {
         <input
           id={`${formId}-name`}
           name="name"
+          type="text"
           value={formData.name}
           onChange={handleChange}
         />
@@ -68,6 +88,7 @@ function ProductForm({ onSave }) {
         <input
           id={`${formId}-brand`}
           name="brand"
+          type="text"
           value={formData.brand}
           onChange={handleChange}
         />
@@ -81,6 +102,7 @@ function ProductForm({ onSave }) {
           value={formData.category}
           onChange={handleChange}
         >
+          {" "}
           <option value="">Choose category</option>
           <option value="Soda">Soda</option>
           <option value="Beer">Beer</option>
@@ -121,6 +143,18 @@ function ProductForm({ onSave }) {
         />
       </label>
 
+      <label htmlFor={`${formId}-image`}>
+        Image URL
+        <input
+          id={`${formId}-image`}
+          name="image"
+          type="text"
+          value={formData.image}
+          onChange={handleChange}
+        />
+      </label>
+      <button type="submit">Add product</button>
+
       <button type="submit">Add product</button>
       {message && <p>{message}</p>}
     </form>
@@ -128,4 +162,3 @@ function ProductForm({ onSave }) {
 }
 
 export default ProductForm;
-
