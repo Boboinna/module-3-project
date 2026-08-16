@@ -1,6 +1,6 @@
 # DrinkHub
 
-A React-based Single Page Application (SPA) for an online drinks e-commerce store with an administrator portal. Built as a group project demonstrating modern frontend development practices including React hooks, client-side routing, context-based state management, and CRUD operations via a simulated backend.
+A React-based Single Page Application (SPA) for an online drinks e-commerce store with an administrator portal. Built as a group project demonstrating modern frontend development practices including React hooks, client-side routing, context-based state management and CRUD operations via a simulated backend.
 
 ## Features
 
@@ -170,50 +170,11 @@ Test files are located in `src/tests/`.
 | `useMemo` | Expensive computations (filtered product lists) |
 | `useCallback` | Stable function references for child components |
 
-## Git Workflow
-
-This is a **group project**. Contributors should follow this workflow:
-
-```bash
-# Pull latest changes before starting work
-git pull origin main
-
-# Create a feature branch
-git checkout -b feature/your-feature-name
-
-# Make commits with clear messages
-git add .
-git commit -m "feat: add search filter to products page"
-
-# Push branch and open a Pull Request
-git push origin feature/your-feature-name
-```
-
-### Suggested Branch Naming
-- `feature/product-search`
-- `feature/admin-crud`
-- `feature/cart-checkout`
-- `fix/navbar-responsive`
-- `test/product-card`
-
-## Roadmap / In Progress
-
-- [x] Project scaffolding & routing
-- [x] CartContext with full CRUD operations
-- [x] Navbar with active links & cart badge
-- [x] JSON Server database with sample products
-- [ ] Product listing with search & category filters
-- [ ] Product detail cards
-- [ ] Shopping cart page UI
-- [ ] Admin dashboard with product management
-- [ ] Add product form with validation
-- [ ] Unit & integration tests for all components
-- [ ] Responsive mobile styling
-
 ## Contributors
 
 This project was built collaboratively as part of a module assignment. Each team member contributed to different features and components.
 
 ## License
-
 This project is for educational purposes.
+
+This is a React + Vite project for a drinks shop selling sodas, beers and juices.
