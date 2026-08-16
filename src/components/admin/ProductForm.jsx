@@ -24,4 +24,90 @@ function ProductForm({ onSave }) {
       ...currentData,
       [name]: value,
     }));
+
   }
+   function handleSubmit(event) {
+    event.preventDefault();
+
+    if (!formData.name || !formData.category || !formData.price) {
+      setMessage("Name, category and price are required.");
+      return;
+    }
+
+    // Number inputs still give us strings, so convert them before saving.
+    const productToSave = {
+      ...formData,
+      price: Number(formData.price),
+      stock: Number(formData.stock),
+    };
+
+    onSave(productToSave)
+      .then(() => {
+        setMessage("Product added successfully.");
+        setFormData(emptyProduct);
+      })
+      .catch(() => {
+        setMessage("Could not add product.");
+      });
+  }
+
+  return (
+    <form className="product-form" onSubmit={handleSubmit}>
+      <label htmlFor={`${formId}-name`}>
+        Product name
+        <input
+          id={`${formId}-name`}
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+        />
+      </label>
+
+      <label htmlFor={`${formId}-brand`}>
+        Brand
+        <input
+          id={`${formId}-brand`}
+          name="brand"
+          value={formData.brand}
+          onChange={handleChange}
+        />
+      </label>
+
+      <label htmlFor={`${formId}-category`}>
+        Category
+        <select
+          id={`${formId}-category`}
+          name="category"
+          value={formData.category}
+          onChange={handleChange}
+        >
+          <option value="">Choose category</option>
+          <option value="Soda">Soda</option>
+          <option value="Beer">Beer</option>
+          <option value="Juice">Juice</option>
+        </select>
+      </label>
+
+      <label htmlFor={`${formId}-price`}>
+        Price
+        <input
+          id={`${formId}-price`}
+          name="price"
+          type="number"
+          min="1"
+          value={formData.price}
+          onChange={handleChange}
+        />
+      </label>
+
+      <label htmlFor={`${formId}-stock`}>
+        Stock
+        <input
+          id={`${formId}-stock`}
+          name="stock"
+          type="number"
+          min="0"
+          value={formData.stock}
+          onChange={handleChange}
+        />
+      </label>
