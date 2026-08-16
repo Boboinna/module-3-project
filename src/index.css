@@ -15,3 +15,284 @@ body {
   margin: 0;
   min-width: 320px;
 }
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+.button-link {
+  border: 0;
+  border-radius: 0.5rem;
+  background: #1f6f78;
+  color: white;
+  cursor: pointer;
+  padding: 0.7rem 1rem;
+  text-decoration: none;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.site-header {
+  background: #172033;
+  color: white;
+}
+
+.navbar {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1120px;
+  padding: 1rem 1.25rem;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-link.active {
+  text-decoration: underline;
+  text-underline-offset: 0.4rem;
+}
+
+main {
+  margin: 0 auto;
+  max-width: 1120px;
+}
+
+.page {
+  padding: 2rem 1.25rem;
+}
+
+.hero {
+  align-items: center;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1.1fr 0.9fr;
+  min-height: 460px;
+  padding: 3rem 1.25rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 6vw, 4.5rem);
+  line-height: 1.05;
+  margin: 0.5rem 0 1rem;
+}
+
+.hero p {
+  line-height: 1.7;
+  max-width: 620px;
+}
+
+.hero img {
+  border-radius: 1rem;
+  width: 100%;
+}
+
+.eyebrow,
+.category-label {
+  color: #1f6f78;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero .button-link {
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.categories-section {
+  padding: 1rem 1.25rem 4rem;
+}
+
+.category-grid,
+.product-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.category-grid article,
+.product-card,
+.cart-item,
+.admin-product,
+.product-form {
+  background: white;
+  border: 1px solid #d8dee7;
+  border-radius: 0.75rem;
+  padding: 1rem;
+}
+
+.shop-controls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-group,
+.product-form label,
+.admin-product label {
+  display: grid;
+  gap: 0.4rem;
+}
+
+input,
+select,
+textarea {
+  border: 1px solid #b8c1ce;
+  border-radius: 0.4rem;
+  padding: 0.65rem;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card img {
+  aspect-ratio: 4 / 3;
+  border-radius: 0.5rem;
+  object-fit: cover;
+  width: 100%;
+}
+
+.product-card h2 {
+  margin: 0.25rem 0;
+}
+
+.product-card button {
+  margin-top: auto;
+}
+
+.price {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.page-heading {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.cart-list,
+.admin-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.cart-item {
+  align-items: center;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 80px 1fr auto auto auto;
+}
+
+.cart-item img {
+  width: 80px;
+}
+
+.quantity-controls {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.quantity-controls button {
+  padding: 0.4rem 0.7rem;
+}
+
+.cart-total {
+  text-align: right;
+}
+
+.admin-product {
+  align-items: end;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 0.7fr 1fr auto auto;
+}
+
+.form-page {
+  max-width: 720px;
+}
+
+.product-form {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.product-form label:last-of-type,
+.product-form button,
+.product-form p {
+  grid-column: 1 / -1;
+}
+
+.product-form textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.error-message {
+  color: #a32828;
+}
+
+@media (max-width: 760px) {
+  .navbar,
+  .page-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .hero,
+  .category-grid,
+  .product-grid,
+  .product-form {
+    grid-template-columns: 1fr;
+  }
+
+  .shop-controls {
+    flex-direction: column;
+  }
+
+  .cart-item,
+  .admin-product {
+    align-items: start;
+    grid-template-columns: 1fr;
+  }
+
+  .product-form label:last-of-type,
+  .product-form button,
+  .product-form p {
+    grid-column: auto;
+  }
+}
