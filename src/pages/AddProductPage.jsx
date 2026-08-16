@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { ProductContext } from "../context/ProductContext";
 import ProductForm from "../components/admin/ProductForm";
+import "../styles/add-product.css";
 
 function AddProductPage() {
   const { addProduct } = useContext(ProductContext);
