@@ -49,6 +49,44 @@ function ProductForm() {
           onChange={handleChange}
         />
       </label>
+      <label htmlFor={`${formId}-category`}>
+        Category
+        <select
+          id={`${formId}-category`}
+          name="category"
+          value={formData.category}
+          onChange={handleChange}
+        >
+          {" "}
+          <option value="">Choose category</option>
+          <option value="Soda">Soda</option>
+          <option value="Beer">Beer</option>
+          <option value="Juice">Juice</option>
+        </select>
+      </label>
+      <label htmlFor={`${formId}-price`}>
+        Price
+        <input
+          id={`${formId}-price`}
+          name="price"
+          type="number"
+          min="1"
+          value={formData.price}
+          onChange={handleChange}
+        />
+      </label>
+
+      <label htmlFor={`${formId}-stock`}>
+        Stock
+        <input
+          id={`${formId}-stock`}
+          name="stock"
+          type="number"
+          min="0"
+          value={formData.stock}
+          onChange={handleChange}
+        />
+      </label>
     </form>
   );
 }
