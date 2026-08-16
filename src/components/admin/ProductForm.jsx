@@ -87,6 +87,26 @@ function ProductForm() {
           onChange={handleChange}
         />
       </label>
+      <label htmlFor={`${formId}-description`}>
+        Description
+        <textarea
+          id={`${formId}-description`}
+          name="description"
+          value={formData.description}
+          onChange={handleChange}
+        />
+      </label>
+
+      <label htmlFor={`${formId}-image`}>
+        Image URL
+        <input
+          id={`${formId}-image`}
+          name="image"
+          type="text"
+          value={formData.image}
+          onChange={handleChange}
+        />
+      </label>
     </form>
   );
 }
