@@ -15,3 +15,72 @@ body {
   margin: 0;
   min-width: 320px;
 }
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+.button-link {
+  border: 0;
+  border-radius: 0.5rem;
+  background: #1f6f78;
+  color: white;
+  cursor: pointer;
+  padding: 0.7rem 1rem;
+  text-decoration: none;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.site-header {
+  background: #172033;
+  color: white;
+}
+
+.navbar {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1120px;
+  padding: 1rem 1.25rem;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-link.active {
+  text-decoration: underline;
+  text-underline-offset: 0.4rem;
+}
+
+main {
+  margin: 0 auto;
+  max-width: 1120px;
+}
+
